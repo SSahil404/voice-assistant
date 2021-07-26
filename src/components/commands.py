@@ -5,6 +5,7 @@ import webbrowser
 
 import main
 import components.weatherInfo as weatherInfo
+import components.getNews as getNews
 
 
 def takeCommand():
@@ -40,6 +41,12 @@ def commands():
         city_name = query.split("in ")[1]
         response = weatherInfo.getInfo(city_name)
         main.speak(response)
+
+    elif 'read news' in query:
+        main.speak("reading news...")
+        news = getNews.news()
+        print(news)
+        main.speak(news)
 
     elif 'open youtube' in query:
         webbrowser.open('youtube.com')

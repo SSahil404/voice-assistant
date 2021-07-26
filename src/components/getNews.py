@@ -1,13 +1,14 @@
 from GoogleNews import GoogleNews
+import random
 
 googlenews = GoogleNews()
-
-googlenews = GoogleNews(period="7d")
-
-googlenews.search('USA')
-
+googlenews.search("INDIA")
 result = googlenews.result()
 
+newsTitle = []
 for x in result:
-    print("-"*50)
-    print("Title--", x['title'])
+    newsTitle.append(x['title'])
+
+
+def news():
+    return random.choice(newsTitle)
