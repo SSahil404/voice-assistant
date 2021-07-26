@@ -35,7 +35,8 @@ def commands():
         main.speak("According to wikipedia")
         main.speak(results)
 
-    if 'weather in' in query:
+    elif 'weather in' in query or 'temperature in' in query:
+        main.speak("Searching weather...")
         city_name = query.split("in ")[1]
         response = weatherInfo.getInfo(city_name)
         main.speak(response)
@@ -51,7 +52,7 @@ def commands():
 
     elif "what is the time" in query or "tell me the time" in query:
         currentTime = datetime.datetime.now().strftime("%H:%M:%S")
-        main.speak(f"Sir, the time is {currentTime}")
+        main.speak(f"Sir, the current time is {currentTime}")
 
     elif query == 'good' or query == 'very good' or query == 'you are very good':
         main.speak("Ohh thank you so much... ")
