@@ -15,11 +15,9 @@ def wishMe():
     return f"{wish} I am Shaktiman, How can I help you?"
 
 
-# wish = wishMe()
-
 statements = [
     wishMe(),
-    "Hola! Welcome back. Please let me know how can I help You?",
+    "Hola! Welcome back. Please let me know how can I help You.",
     "Good to see you! Please tell me if I can help you.",
     "Hello! please say what you need, I will try to help you as much as I can.",
 ]

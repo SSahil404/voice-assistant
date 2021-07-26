@@ -47,12 +47,9 @@ def commands():
     elif "open google" in query:
         webbrowser.open("google.com")
 
-    elif "play music" in query:
-        webbrowser.open('https://youtu.be/4QvVCExbgNs')
-
     elif "what is the time" in query or "tell me the time" in query:
         currentTime = datetime.datetime.now().strftime("%H:%M:%S")
-        main.speak(f"Sir, the current time is {currentTime}")
+        main.speak(f"The current time is {currentTime}")
 
     elif query == 'good' or query == 'very good' or query == 'you are very good':
         main.speak("Ohh thank you so much... ")
@@ -61,5 +58,5 @@ def commands():
         main.speak("Just tell quite to stop me")
 
     elif "stop" == query:
-        main.speak("Thank you for having me Sir!\nHave a Good Day")
+        main.speak("Thank you for having me.\nHave a Good Day")
         exit()
