@@ -37,9 +37,12 @@ def commands():
 
     elif 'weather in' in query or 'temperature in' in query:
         main.speak("Searching weather...")
-        city_name = query.split("in ")[1]
-        response = weatherInfo.getInfo(city_name)
-        main.speak(response)
+        try:
+            city_name = query.split("in ")[1]
+            response = weatherInfo.getInfo(city_name)
+            main.speak(response)
+        except Exception as e:
+            main.speak("Sorry, I couldn't get it...")
 
     elif 'read news' in query:
         main.speak("reading news...")
@@ -50,19 +53,19 @@ def commands():
     elif 'open youtube' in query:
         webbrowser.open('youtube.com')
 
-    elif "open google" in query:
+    elif 'open google' in query:
         webbrowser.open("google.com")
 
-    elif "what is the time" in query or "tell me the time" in query:
+    elif 'what is the time' in query or 'tell me the time' in query:
         currentTime = datetime.datetime.now().strftime("%H:%M:%S")
         main.speak(f"The current time is {currentTime}")
 
     elif query == 'good' or query == 'very good' or query == 'you are very good':
         main.speak("Ohh thank you so much... ")
 
-    elif "how to stop you" in query:
-        main.speak("Just tell quite to stop me")
+    elif 'how to stop you' in query:
+        main.speak("Just say stop to stop me")
 
-    elif "stop" == query:
+    elif 'stop' == query:
         main.speak("Thank you for having me.\nHave a Good Day")
         exit()
