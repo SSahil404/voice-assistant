@@ -4,7 +4,7 @@
 
 ## Voice Assistant using `Python`
 
-`College Project`
+`College Mini Project`
 
 </div>
 
